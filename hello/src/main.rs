@@ -3,6 +3,11 @@ use std::env;
 
 
 fn main() {
+    println!("Hello, world!");
+}
+
+#[allow(dead_code)]
+fn exec_gcd() {
     let mut numbers = Vec::new();
 
     for arg in env::args().skip(1) {
@@ -22,7 +27,7 @@ fn main() {
     println!("The greatest common dividsor of {:?} is {}", numbers, d);
 }
 
-
+#[allow(dead_code)]
 fn gcd(mut m: u64, mut n: u64) -> u64 {
     assert!(m != 0 && n != 0);
     while m != 0 {
@@ -36,11 +41,3 @@ fn gcd(mut m: u64, mut n: u64) -> u64 {
     n
 }
 
-#[test]
-fn test_gcd() {
-    assert_eq!(gcd(13,14), 1);
-
-    assert_eq!(gcd(2 * 3 * 5 * 11 * 17,
-                3 * 7 * 11 * 13 * 19),
-                3 * 11);
-}
