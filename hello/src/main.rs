@@ -3,8 +3,19 @@ use std::env;
 
 
 fn main() {
-    println!("Hello, world!");
+   let mut my_string = String::new();
+   for _ in 0..50 {
+        my_string.push_str("a b c d ");
+        get_length(&my_string);
+   }
 }
+
+fn get_length(input : &String)
+{
+    println!("It's {} words long.", input.split_whitespace().count());
+}
+
+
 
 #[allow(dead_code)]
 fn exec_gcd() {
